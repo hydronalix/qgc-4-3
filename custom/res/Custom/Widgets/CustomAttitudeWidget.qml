@@ -10,6 +10,7 @@
  */
 
 import QtQuick
+import Qt5Compat.GraphicalEffects
 
 import QGroundControl
 import QGroundControl.Controls
