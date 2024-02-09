@@ -26,6 +26,7 @@ QList<QGCMAVLink::FirmwareClass_t> CustomFirmwarePluginFactory::supportedFirmwar
 {
     QList<QGCMAVLink::FirmwareClass_t> firmwareClasses;
     firmwareClasses.append(QGCMAVLink::FirmwareClassPX4);
+    firmwareClasses.append(QGCMAVLink::FirmwareClassArduPilot);
     return firmwareClasses;
 }
 
@@ -33,6 +34,7 @@ QList<QGCMAVLink::VehicleClass_t> CustomFirmwarePluginFactory::supportedVehicleC
 {
     QList<QGCMAVLink::VehicleClass_t> vehicleClasses;
     vehicleClasses.append(QGCMAVLink::VehicleClassMultiRotor);
+    vehicleClasses.append(QGCMAVLink::VehicleClassRoverBoat);
     return vehicleClasses;
 }
 
