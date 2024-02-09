@@ -13,12 +13,30 @@
 
 #pragma once
 
-#include "FirmwarePlugin.h"
-#include "PX4FirmwarePlugin.h"
+#include "APMFirmwarePlugin.h"
 
-class CustomCameraManager;
+class APMHydronalixMode : public APMCustomMode
+{
+public:
+    enum Mode {
+        MANUAL          = 0,
+        ACRO            = 1,
+        STEERING        = 3,
+        HOLD            = 4,
+        LOITER          = 5,
+        FOLLOW          = 6,
+        SIMPLE          = 7,
+        AUTO            = 10,
+        RTL             = 11,
+        SMART_RTL       = 12,
+        GUIDED          = 15,
+        INITIALIZING    = 16,
+    };
 
-class CustomFirmwarePlugin : public PX4FirmwarePlugin
+    APMHydronalixMode(uint32_t mode, bool settable);
+};
+
+class CustomFirmwarePlugin : public APMFirmwarePlugin
 {
     Q_OBJECT
 public:
@@ -27,7 +45,7 @@ public:
     // FirmwarePlugin overrides
     AutoPilotPlugin*    autopilotPlugin (Vehicle* vehicle) final;
     const QVariantList& toolIndicators  (const Vehicle* vehicle) final;
-    bool                hasGimbal       (Vehicle* vehicle, bool& rollSupported, bool& pitchSupported, bool& yawSupported) final;
+    // bool                hasGimbal       (Vehicle* vehicle, bool& rollSupported, bool& pitchSupported, bool& yawSupported) final;
 
 private:
     QVariantList _toolIndicatorList;

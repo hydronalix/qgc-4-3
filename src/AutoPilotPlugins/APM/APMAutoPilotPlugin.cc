@@ -9,29 +9,6 @@
 
 
 #include "APMAutoPilotPlugin.h"
-#include "UAS.h"
-#include "APMParameterMetaData.h"
-#include "APMFirmwarePlugin.h"
-#include "ArduCopterFirmwarePlugin.h"
-#include "ArduRoverFirmwarePlugin.h"
-#include "VehicleComponent.h"
-#include "APMAirframeComponent.h"
-#include "APMFlightModesComponent.h"
-#include "APMRadioComponent.h"
-#include "APMSafetyComponent.h"
-#include "APMTuningComponent.h"
-#include "APMSensorsComponent.h"
-#include "APMPowerComponent.h"
-#include "APMMotorComponent.h"
-#include "APMCameraComponent.h"
-#include "APMLightsComponent.h"
-#include "APMSubFrameComponent.h"
-#include "APMFollowComponent.h"
-#include "ESP8266Component.h"
-#include "APMHeliComponent.h"
-#include "APMRemoteSupportComponent.h"
-#include "QGCApplication.h"
-#include "ParameterManager.h"
 
 #if !defined(NO_SERIAL_LINK) && !defined(__android__)
 #include <QSerialPortInfo>

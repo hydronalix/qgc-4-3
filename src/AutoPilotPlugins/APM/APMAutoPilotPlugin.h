@@ -12,23 +12,30 @@
 #define APMAutoPilotPlugin_H
 
 #include "AutoPilotPlugin.h"
+#include "UAS.h"
+#include "APMParameterMetaData.h"
+#include "APMFirmwarePlugin.h"
+#include "ArduCopterFirmwarePlugin.h"
+#include "ArduRoverFirmwarePlugin.h"
+#include "VehicleComponent.h"
+#include "APMAirframeComponent.h"
+#include "APMFlightModesComponent.h"
+#include "APMRadioComponent.h"
+#include "APMSafetyComponent.h"
+#include "APMTuningComponent.h"
+#include "APMSensorsComponent.h"
+#include "APMPowerComponent.h"
+#include "APMMotorComponent.h"
+#include "APMCameraComponent.h"
+#include "APMLightsComponent.h"
+#include "APMSubFrameComponent.h"
+#include "APMFollowComponent.h"
+#include "ESP8266Component.h"
+#include "APMHeliComponent.h"
+#include "APMRemoteSupportComponent.h"
+#include "QGCApplication.h"
+#include "ParameterManager.h"
 #include "Vehicle.h"
-
-class APMAirframeComponent;
-class APMFlightModesComponent;
-class APMRadioComponent;
-class APMTuningComponent;
-class APMSafetyComponent;
-class APMSensorsComponent;
-class APMPowerComponent;
-class APMMotorComponent;
-class APMCameraComponent;
-class APMLightsComponent;
-class APMSubFrameComponent;
-class ESP8266Component;
-class APMHeliComponent;
-class APMRemoteSupportComponent;
-class APMFollowComponent;
 
 /// This is the APM specific implementation of the AutoPilot class.
 class APMAutoPilotPlugin : public AutoPilotPlugin
