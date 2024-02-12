@@ -255,4 +255,26 @@ Item {
             anchors.centerIn:   parent
         }
     }
+
+    /* adding another cringe button to the fly view */
+    Rectangle {
+        id:                     testRectangle
+        visible:                false
+        anchors.right:          parent.right
+        anchors.top:            parent.top
+        anchors.topMargin:      parentToolInsets.topEdgeRightInset + _toolsMargin
+        anchors.rightMargin:    parentToolInsets.rightEdgeTopInset - _toolsMargin
+        width:                  300
+        height:                 200
+        color:                  'red'
+    }
+
+    /* hmmmm */
+    ActuatorToggleWidget {
+        id: testButton
+        anchors.right:          parent.right
+        anchors.top:            parent.top
+        anchors.topMargin:      _toolsMargin
+        anchors.rightMargin:    _toolsMargin
+    }
 }
