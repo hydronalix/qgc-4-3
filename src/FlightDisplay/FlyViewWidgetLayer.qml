@@ -56,7 +56,7 @@ Item {
         leftEdgeCenterInset:    parentToolInsets.leftEdgeCenterInset
         leftEdgeBottomInset:    virtualJoystickMultiTouch.visible ? virtualJoystickMultiTouch.leftEdgeBottomInset : parentToolInsets.leftEdgeBottomInset
         rightEdgeTopInset:      instrumentPanel.rightEdgeTopInset
-        rightEdgeCenterInset:   (telemetryPanel.rightEdgeCenterInset > photoVideoControl.rightEdgeCenterInset) ? telemetryPanel.rightEdgeCenterInset : photoVideoControl.rightEdgeCenterInset
+        // rightEdgeCenterInset:   (telemetryPanel.rightEdgeCenterInset > photoVideoControl.rightEdgeCenterInset) ? telemetryPanel.rightEdgeCenterInset : photoVideoControl.rightEdgeCenterInset
         rightEdgeBottomInset:   virtualJoystickMultiTouch.visible ? virtualJoystickMultiTouch.rightEdgeBottomInset : parentToolInsets.rightEdgeBottomInset
         topEdgeLeftInset:       toolStrip.topEdgeLeftInset
         topEdgeCenterInset:     mapScale.topEdgeCenterInset
@@ -132,36 +132,36 @@ Item {
         property real topEdgeRightInset: visible ? y + height : 0
     }
 
-    PhotoVideoControl {
-        id:                     photoVideoControl
-        anchors.margins:        _toolsMargin
-        anchors.right:          parent.right
-        width:                  _rightPanelWidth
+    // PhotoVideoControl {
+    //     id:                     photoVideoControl
+    //     anchors.margins:        _toolsMargin
+    //     anchors.right:          parent.right
+    //     width:                  _rightPanelWidth
 
-        property real rightEdgeCenterInset: visible ? parent.width - x : 0
+    //     property real rightEdgeCenterInset: visible ? parent.width - x : 0
 
-        state:                  _verticalCenter ? "verticalCenter" : "topAnchor"
-        states: [
-            State {
-                name: "verticalCenter"
-                AnchorChanges {
-                    target:                 photoVideoControl
-                    anchors.top:            undefined
-                    anchors.verticalCenter: _root.verticalCenter
-                }
-            },
-            State {
-                name: "topAnchor"
-                AnchorChanges {
-                    target:                 photoVideoControl
-                    anchors.verticalCenter: undefined
-                    anchors.top:            instrumentPanel.bottom
-                }
-            }
-        ]
+    //     state:                  _verticalCenter ? "verticalCenter" : "topAnchor"
+    //     states: [
+    //         State {
+    //             name: "verticalCenter"
+    //             AnchorChanges {
+    //                 target:                 photoVideoControl
+    //                 anchors.top:            undefined
+    //                 anchors.verticalCenter: _root.verticalCenter
+    //             }
+    //         },
+    //         State {
+    //             name: "topAnchor"
+    //             AnchorChanges {
+    //                 target:                 photoVideoControl
+    //                 anchors.verticalCenter: undefined
+    //                 anchors.top:            instrumentPanel.bottom
+    //             }
+    //         }
+    //     ]
 
-        property bool _verticalCenter: !QGroundControl.settingsManager.flyViewSettings.alternateInstrumentPanel.rawValue
-    }
+    //     property bool _verticalCenter: !QGroundControl.settingsManager.flyViewSettings.alternateInstrumentPanel.rawValue
+    // }
 
     TelemetryValuesBar {
         id:                 telemetryPanel
