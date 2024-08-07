@@ -30,7 +30,7 @@ Rectangle  {
     ColumnLayout {
         id: actuatorscolumn
         Text {
-            text: "guh"
+            text: ""
             horizontalAlignment: parent.AlignHCenter
         }
 
